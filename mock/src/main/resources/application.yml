@@ -1,0 +1,8 @@
+management:
+    endpoint:
+        restart:
+            enabled: false
+username: test
+password: 123
+route:
+    dynamicPassword: ${SECRETS_DEMO_PASSWORD:demo}
