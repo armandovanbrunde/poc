@@ -18,6 +18,8 @@
         <fabric8.iconRef>camel</fabric8.iconRef>
         <docker.image.prefix>gcr.io</docker.image.prefix>
         <gcloud.project>bright-sunlight-227912</gcloud.project>
+        <docker.username>test</docker.username>
+        <docker.passowrd>123</docker.passowrd>
     </properties>
     <dependencies>
 
@@ -266,6 +268,29 @@
                     </execution>
                 </executions>
             </plugin>
+
+            <!--plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>1.6.0</version>
+                <executions>
+                    <execution>
+                        <id>retrieve-config</id>
+                        <phase>validate</phase>
+                        <goals>
+                            <goal>exec</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <executable>gcloud</executable>
+                    <arguments>
+                        <argument>auth</argument>
+                        <argument>print-access-token</argument>
+                    </arguments>
+                    <workingDirectory>${basedir}/src/main/resources/</workingDirectory>
+                </configuration>
+            </plugin-->
         </plugins>
     </build>
 

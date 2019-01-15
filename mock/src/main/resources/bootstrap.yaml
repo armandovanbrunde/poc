@@ -4,7 +4,7 @@ spring:
   cloud:
     kubernetes:
       reload:
-        enabled: false
+        enabled: true
         mode: polling
         period: 5000
       config:

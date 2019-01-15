@@ -18,14 +18,17 @@ import java.util.List;
 
 @Component
 public class Route extends RouteBuilder {
-
+    @Autowired
+    DynamicConfig dynamicConfig;
 
     @Override
     public void configure() throws Exception {
 
-        /*from("timer://tick?period=5000&repeatCount=1")
-                .setHeader("dynamicPassword").method("dynamicConfig","getDynamicPassword")
-                .log("body is : ${body}")
+
+
+        /*from("timer://tick?period=5000")
+                .setHeader("dynamicPassword").method("dynamicConfig","getMockPassword")
+                .log("body is : ${header.dynamicPassword}")
                 ;*/
 
         from("cxf:bean:mockEndpoint?dataFormat=PAYLOAD")
@@ -67,7 +70,7 @@ public class Route extends RouteBuilder {
                                         "                  <ns:Meter>\n" +
                                         "                     <ns:MeterID>\n" +
                                         "                        <!--Optional:-->\n" +
-                                        "                        <ns:Code>speluncis abdidit</ns:Code>\n" +
+                                        "                        <ns:Code>" + dynamicConfig.getMockPassword() + "</ns:Code>\n" +
                                         "                        <!--Optional:-->\n" +
                                         "                        <ns:EanCode>bella gero et</ns:EanCode>\n" +
                                         "                     </ns:MeterID>\n" +

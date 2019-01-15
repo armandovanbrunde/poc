@@ -1,9 +1,7 @@
 management:
     endpoint:
         restart:
-            enabled: false
-username: test
-password: 123
+            enabled: true
 route:
     mockUser: demo
     mockPassword: demo
