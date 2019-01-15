@@ -1,0 +1,7 @@
+management:
+    endpoint:
+        restart:
+            enabled: true
+route:
+    mockUser: demo
+    mockPassword: demo

@@ -1,0 +1,420 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<xs:schema xmlns:ptsd="http://schemas.gengroup.com/ProvideTimeSeriesData/1.0"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://schemas.gengroup.com/ProvideTimeSeriesData/1.0" elementFormDefault="qualified"
+           attributeFormDefault="unqualified">
+    <xs:element name="ProvideTimeSeriesData" type="xs:anyType">
+    </xs:element>
+    <xs:element name="ProvideTimeSeriesDataRequest">
+        <xs:annotation>
+            <xs:documentation>Timeseries data is provided on request</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Header" type="ptsd:Header"/>
+                <xs:element name="Request">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="TimeLines">
+                                <xs:complexType>
+                                    <xs:sequence maxOccurs="unbounded">
+                                        <xs:element name="TimeLine">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element name="Meter">
+                                                        <xs:complexType>
+                                                            <xs:sequence>
+                                                                <xs:sequence>
+                                                                    <xs:element name="MeterID" type="ptsd:MeterID">
+                                                                        <xs:annotation>
+                                                                            <xs:documentation>
+                                                                                Node should contain at least code or
+                                                                                eancode,
+                                                                                optional is to both
+                                                                            </xs:documentation>
+                                                                        </xs:annotation>
+                                                                    </xs:element>
+                                                                    <xs:element name="MeterProperties"
+                                                                                type="ptsd:MeterProperties"/>
+                                                                </xs:sequence>
+                                                            </xs:sequence>
+                                                        </xs:complexType>
+                                                    </xs:element>
+                                                    <xs:element name="TimeLineAttributes"
+                                                                type="ptsd:TimeLineAttributes"/>
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="ProvideTimeSeriesDataResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Header" type="ptsd:Header"/>
+                <xs:choice>
+                    <xs:element name="Error" type="ptsd:Error"/>
+                    <xs:element name="Response">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element name="TimeLines">
+                                    <xs:complexType>
+                                        <xs:sequence maxOccurs="unbounded">
+                                            <xs:element name="TimeLine">
+                                                <xs:complexType>
+                                                    <xs:sequence>
+                                                        <xs:element name="Meter">
+                                                            <xs:complexType>
+                                                                <xs:sequence>
+                                                                    <xs:element name="MeterID" type="ptsd:MeterID">
+                                                                        <xs:annotation>
+                                                                            <xs:documentation>
+                                                                                Node
+                                                                                should
+                                                                                contain
+                                                                                at
+                                                                                least
+                                                                                code
+                                                                                or
+                                                                                eancode,
+                                                                                optional
+                                                                                is
+                                                                                to
+                                                                                add
+                                                                                both
+                                                                            </xs:documentation>
+                                                                        </xs:annotation>
+                                                                    </xs:element>
+                                                                    <xs:element name="MeterProperties"
+                                                                                type="ptsd:MeterProperties"/>
+                                                                </xs:sequence>
+                                                            </xs:complexType>
+                                                        </xs:element>
+                                                        <xs:element name="TimeLineAttributes"
+                                                                    type="ptsd:TimeLineAttributes"/>
+                                                        <xs:element name="TimeLineData" type="ptsd:TimeLineData"/>
+                                                    </xs:sequence>
+                                                </xs:complexType>
+                                            </xs:element>
+                                        </xs:sequence>
+                                    </xs:complexType>
+                                </xs:element>
+                            </xs:sequence>
+                        </xs:complexType>
+                    </xs:element>
+                </xs:choice>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:complexType name="TimeLineData">
+        <xs:sequence>
+            <xs:element name="TimeLineValue" type="xs:normalizedString">
+                <xs:annotation>
+                    <xs:documentation>
+                        Values are semicolon seperated
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="TimeLineTimeStamp" type="xs:normalizedString" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>
+                        Timestamps are semicolon seperated
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="TimeLineState" type="xs:normalizedString" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>
+                        States are semicolon seperated
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="TimeLineAttributes">
+        <xs:sequence>
+            <xs:element name="PeriodStart" type="xs:dateTime"/>
+            <xs:element name="PeriodEnd" type="xs:dateTime"/>
+            <xs:element name="DSTMethod">
+                <xs:simpleType>
+                    <xs:restriction base="xs:nonNegativeInteger">
+                        <xs:totalDigits value="1"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="Interval" minOccurs="0">
+                <xs:simpleType>
+                    <xs:restriction base="xs:normalizedString">
+                        <xs:minLength value="1"/>
+                        <xs:maxLength value="2"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="DateTimeMethod" minOccurs="0">
+                <xs:simpleType>
+                    <xs:restriction base="xs:nonNegativeInteger">
+                        <xs:totalDigits value="1"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="Version" minOccurs="0">
+                <xs:simpleType>
+                    <xs:restriction base="xs:integer">
+                        <xs:totalDigits value="1"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="Type" minOccurs="0">
+                <xs:simpleType>
+                    <xs:restriction base="xs:nonNegativeInteger">
+                        <xs:totalDigits value="1"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="StatusBit" minOccurs="0">
+                <xs:simpleType>
+                    <xs:restriction base="xs:nonNegativeInteger">
+                        <xs:totalDigits value="1"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="Unit" minOccurs="0">
+                <xs:simpleType>
+                    <xs:restriction base="xs:normalizedString">
+                        <xs:minLength value="1"/>
+                        <xs:maxLength value="15"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="MeterID">
+        <xs:sequence>
+            <xs:element name="Code" minOccurs="0">
+                <xs:simpleType>
+                    <xs:restriction base="xs:normalizedString">
+                        <xs:maxLength value="40"/>
+                        <xs:minLength value="1"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="EanCode" minOccurs="0">
+                <xs:simpleType>
+                    <xs:restriction base="xs:token">
+                        <xs:length value="18"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="MeterProperties">
+        <xs:sequence>
+            <xs:element name="Name" minOccurs="0">
+                <xs:simpleType>
+                    <xs:restriction base="xs:normalizedString">
+                        <xs:maxLength value="60"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="Product" minOccurs="0">
+                <xs:simpleType>
+                    <xs:restriction base="xs:normalizedString">
+                        <xs:length value="1"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="Unit" minOccurs="0">
+                <xs:simpleType>
+                    <xs:restriction base="xs:normalizedString">
+                        <xs:maxLength value="15"/>
+                        <xs:minLength value="1" fixed="false"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="Versions" minOccurs="0">
+                <xs:simpleType>
+                    <xs:restriction base="xs:nonNegativeInteger">
+                        <xs:totalDigits value="1"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="Decimals" minOccurs="0">
+                <xs:simpleType>
+                    <xs:restriction base="xs:nonNegativeInteger">
+                        <xs:totalDigits value="1"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="Scheme" minOccurs="0">
+                <xs:simpleType>
+                    <xs:restriction base="xs:normalizedString">
+                        <xs:maxLength value="30"/>
+                        <xs:minLength value="1"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="Administration" minOccurs="0">
+                <xs:simpleType>
+                    <xs:restriction base="xs:normalizedString">
+                        <xs:maxLength value="30"/>
+                        <xs:minLength value="1"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="Segment" minOccurs="0">
+                <xs:simpleType>
+                    <xs:restriction base="xs:normalizedString">
+                        <xs:maxLength value="30"/>
+                        <xs:minLength value="1"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="SubSegment" minOccurs="0">
+                <xs:simpleType>
+                    <xs:restriction base="xs:normalizedString">
+                        <xs:minLength value="1"/>
+                        <xs:maxLength value="30"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="MinInterval" type="xs:nonNegativeInteger" minOccurs="0"/>
+            <xs:element name="Code1" minOccurs="0">
+                <xs:simpleType>
+                    <xs:restriction base="xs:normalizedString">
+                        <xs:maxLength value="80"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="Code2" minOccurs="0">
+                <xs:simpleType>
+                    <xs:restriction base="xs:normalizedString">
+                        <xs:maxLength value="80"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="Code3" minOccurs="0">
+                <xs:simpleType>
+                    <xs:restriction base="xs:normalizedString">
+                        <xs:maxLength value="80"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="Code4" minOccurs="0">
+                <xs:simpleType>
+                    <xs:restriction base="xs:normalizedString">
+                        <xs:maxLength value="80"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="Code5" minOccurs="0">
+                <xs:simpleType>
+                    <xs:restriction base="xs:normalizedString">
+                        <xs:maxLength value="80"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="Code6" minOccurs="0">
+                <xs:simpleType>
+                    <xs:restriction base="xs:normalizedString">
+                        <xs:maxLength value="80"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="MeterType" minOccurs="0">
+                <xs:simpleType>
+                    <xs:restriction base="xs:nonNegativeInteger">
+                        <xs:totalDigits value="2"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="Header">
+        <xs:sequence>
+            <xs:element name="MessageID">
+                <xs:simpleType>
+                    <xs:restriction base="xs:normalizedString">
+                        <xs:maxLength value="60"/>
+                        <xs:minLength value="1"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="DateTime" type="xs:dateTime"/>
+            <xs:element name="CorrelationID" minOccurs="0">
+                <xs:simpleType>
+                    <xs:restriction base="xs:normalizedString">
+                        <xs:maxLength value="60"/>
+                        <xs:minLength value="1"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="Retry" type="xs:boolean" minOccurs="0"/>
+            <xs:element name="SourceID" minOccurs="0">
+                <xs:simpleType>
+                    <xs:restriction base="xs:normalizedString">
+                        <xs:maxLength value="60"/>
+                        <xs:minLength value="1"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="TransactionID" minOccurs="0">
+                <xs:simpleType>
+                    <xs:restriction base="xs:normalizedString">
+                        <xs:maxLength value="60"/>
+                        <xs:minLength value="1"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="Sender" minOccurs="0">
+                <xs:simpleType>
+                    <xs:restriction base="xs:normalizedString">
+                        <xs:maxLength value="60"/>
+                        <xs:minLength value="1"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="Receiver" minOccurs="0">
+                <xs:simpleType>
+                    <xs:restriction base="xs:normalizedString">
+                        <xs:maxLength value="60"/>
+                        <xs:minLength value="1"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="Error">
+        <xs:sequence>
+            <xs:element name="Origin">
+                <xs:simpleType>
+                    <xs:restriction base="xs:normalizedString">
+                        <xs:minLength value="1"/>
+                        <xs:maxLength value="60"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="Code">
+                <xs:simpleType>
+                    <xs:restriction base="xs:normalizedString">
+                        <xs:minLength value="1"/>
+                        <xs:maxLength value="10"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="Description">
+                <xs:simpleType>
+                    <xs:restriction base="xs:normalizedString">
+                        <xs:minLength value="1"/>
+                        <xs:maxLength value="500"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>
