@@ -1,7 +1,7 @@
 management:
     endpoint:
         restart:
-            enabled: false
+            enabled: true
 gasnl:
     username: demo
     password: demo
