@@ -5,4 +5,5 @@ management:
 username: test
 password: 123
 route:
-    dynamicPassword: ${SECRETS_DEMO_PASSWORD:demo}
+    mockUser: demo
+    mockPassword: demo

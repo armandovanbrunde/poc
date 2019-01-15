@@ -6,14 +6,23 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 @ConfigurationProperties(prefix = "route")
 public class DynamicConfig {
-    private String dynamicPassword;
+    private String mockPassword;
+    private String mockUser;
 
-    public String getDynamicPassword() {
-        return dynamicPassword;
+    public String getMockPassword() {
+        return mockPassword;
     }
 
-    public void setDynamicPassword(String dynamicPassword) {
-        this.dynamicPassword = dynamicPassword;
+    public String getMockUser() {
+        return mockUser;
+    }
+
+    public void setMockPassword(String mockPassword) {
+        this.mockPassword = mockPassword;
+    }
+
+    public void setMockUser(String mockUser) {
+        this.mockUser = mockUser;
     }
 
 

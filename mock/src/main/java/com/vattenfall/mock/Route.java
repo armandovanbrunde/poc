@@ -20,17 +20,13 @@ import java.util.List;
 public class Route extends RouteBuilder {
 
 
-    @Autowired
-    DynamicConfig dynamicConfig;
-
     @Override
     public void configure() throws Exception {
 
-        from("timer://tick?period=5000&repeatCount=1")
+        /*from("timer://tick?period=5000&repeatCount=1")
                 .setHeader("dynamicPassword").method("dynamicConfig","getDynamicPassword")
-                //.to("bean:dynamicConfig?method=getMessage")
                 .log("body is : ${body}")
-                ;
+                ;*/
 
         from("cxf:bean:mockEndpoint?dataFormat=PAYLOAD")
                 .log("logging ${body}")
