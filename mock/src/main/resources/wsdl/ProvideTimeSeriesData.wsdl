@@ -1,0 +1,36 @@
+<wsdl:definitions targetNamespace="http://schemas.gengroup.com/ProvideTimeSeriesData/1.0" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://schemas.gengroup.com/ProvideTimeSeriesData/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ptsd="http://schemas.gengroup.com/ProvideTimeSeriesData/1.0">
+	<wsdl:types>
+		<xs:schema>
+                        <xs:import schemaLocation="../schema/ProvideTimeSeriesData_XSD_v1.xsd" namespace="http://schemas.gengroup.com/ProvideTimeSeriesData/1.0"/>
+		</xs:schema>
+	</wsdl:types>
+	<wsdl:message name="ProvideTimeSeriesDataRequest">
+		<wsdl:part name="ProvideTimeSeriesDataRequest" element="ptsd:ProvideTimeSeriesDataRequest"/>
+	</wsdl:message>
+	<wsdl:message name="ProvideTimeSeriesDataResponse">
+		<wsdl:part name="ProvideTimeSeriesDataResponse" element="ptsd:ProvideTimeSeriesDataResponse"/>
+	</wsdl:message>
+	<wsdl:portType name="ProvideTimeSeriesData">
+		<wsdl:operation name="ProvideTimeSeriesData">
+			<wsdl:input message="tns:ProvideTimeSeriesDataRequest"/>
+			<wsdl:output message="tns:ProvideTimeSeriesDataResponse"/>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="ProvideTimeSeriesData" type="tns:ProvideTimeSeriesData">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="ProvideTimeSeriesData">
+			<soap:operation soapAction="ProvideTimeSeriesData"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="ProvideTimeSeriesData">
+		<wsdl:port name="ProvideTimeSeriesData" binding="tns:ProvideTimeSeriesData">
+			<soap:address location="http://netdapp2:5010"/>
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

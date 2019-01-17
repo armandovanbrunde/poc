@@ -1,0 +1,10 @@
+apiVersion: v1
+data:
+  application.properties: |
+    # Override the configuration properties here
+    gasnl.username: k8s
+    gasnl.password: ks8s
+    gasnl.endpoint: "http://10.11.251.5:8080/services/mock"
+kind: ConfigMap
+metadata:
+  name: gasnltimeseries

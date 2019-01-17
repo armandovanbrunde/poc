@@ -1,0 +1,10 @@
+management:
+    endpoint:
+        restart:
+            enabled: true
+gasnl:
+    username: demo
+    password: demo
+    endpoint: "http://localhost:8080/services/mock"
+server:
+    port: 8081
