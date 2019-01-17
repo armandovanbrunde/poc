@@ -1,0 +1,9 @@
+apiVersion: v1
+data:
+  application.properties: |
+    # Override the configuration properties here
+    route.mockUser: k8s
+    route.mockPassword: hello message changed in soap again and again
+kind: ConfigMap
+metadata:
+  name: mock
