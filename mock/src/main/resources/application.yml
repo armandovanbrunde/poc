@@ -5,3 +5,5 @@ management:
 route:
     mockUser: demo
     mockPassword: demo
+mockMessage: ${MSG_1:hello}
+dummyMessage: ${MSG_2:hi}
