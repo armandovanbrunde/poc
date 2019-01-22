@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+    <soap:Body>
+        <ns:ProvideTimeSeriesDataResponse xmlns:ns="http://schemas.gengroup.com/ProvideTimeSeriesData/1.0" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+            <ns:Header>
+                <ns:MessageID>from mock</ns:MessageID>
+                <ns:DateTime>2013-11-23T15:44:07</ns:DateTime>
+                <!--Optional:-->
+                <ns:CorrelationID>ventos tempestatesque</ns:CorrelationID>
+                <!--Optional:-->
+                <ns:Retry>false</ns:Retry>
+                <!--Optional:-->
+                <ns:SourceID>per auras</ns:SourceID>
+                <!--Optional:-->
+                <ns:TransactionID>circum claustra</ns:TransactionID>
+                <!--Optional:-->
+                <ns:Sender>nimborum in</ns:Sender>
+                <!--Optional:-->
+                <ns:Receiver/>
+            </ns:Header>
+            <!--Optional:-->
+            <ns:Error>
+                <ns:Origin>profundum quippe ferant</ns:Origin>
+                <ns:Code>et carcere</ns:Code>
+                <ns:Description>iovis rapidum iaculata</ns:Description>
+            </ns:Error>
+            <!--Optional:-->
+            <ns:Response>
+                <ns:TimeLines>
+                    <!--1 or more repetitions:-->
+                    <ns:TimeLine>
+                        <ns:Meter>
+                            <ns:MeterID>
+                                <!--Optional:-->
+                                <ns:Code>demo</ns:Code>
+                                <!--Optional:-->
+                                <ns:EanCode>bella gero et</ns:EanCode>
+                            </ns:MeterID>
+                            <ns:MeterProperties>
+                                <!--Optional:-->
+                                <ns:Name>demo</ns:Name>
+                                <!--Optional:-->
+                                <ns:Product>message1</ns:Product>
+                                <!--Optional:-->
+                                <ns:Unit>ac vinclis</ns:Unit>
+                                <!--Optional:-->
+                                <ns:Versions>100</ns:Versions>
+                                <!--Optional:-->
+                                <ns:Decimals>100</ns:Decimals>
+                                <!--Optional:-->
+                                <ns:Scheme>speluncis abdidit</ns:Scheme>
+                                <!--Optional:-->
+                                <ns:Administration>aris imponet honorem</ns:Administration>
+                                <!--Optional:-->
+                                <ns:Segment>praeterea aut</ns:Segment>
+                                <!--Optional:-->
+                                <ns:SubSegment>claustra fremunt</ns:SubSegment>
+                                <!--Optional:-->
+                                <ns:MinInterval>200</ns:MinInterval>
+                                <!--Optional:-->
+                                <ns:Code1>imperio premit</ns:Code1>
+                                <!--Optional:-->
+                                <ns:Code2>quisquam numen</ns:Code2>
+                                <!--Optional:-->
+                                <ns:Code3>ac vinclis</ns:Code3>
+                                <!--Optional:-->
+                                <ns:Code4>ac vinclis</ns:Code4>
+                                <!--Optional:-->
+                                <ns:Code5>pectore flammas</ns:Code5>
+                                <!--Optional:-->
+                                <ns:Code6>pectore flammas</ns:Code6>
+                                <!--Optional:-->
+                                <ns:MeterType>100</ns:MeterType>
+                            </ns:MeterProperties>
+                        </ns:Meter>
+                        <ns:TimeLineAttributes>
+                            <ns:PeriodStart>2015-10-10T12:07:56+02:00</ns:PeriodStart>
+                            <ns:PeriodEnd>2018-07-19T10:02:25+02:00</ns:PeriodEnd>
+                            <ns:DSTMethod>100</ns:DSTMethod>
+                            <!--Optional:-->
+                            <ns:Interval>volutans nimborum in</ns:Interval>
+                            <!--Optional:-->
+                            <ns:DateTimeMethod>100</ns:DateTimeMethod>
+                            <!--Optional:-->
+                            <ns:Version>100</ns:Version>
+                            <!--Optional:-->
+                            <ns:Type>100</ns:Type>
+                            <!--Optional:-->
+                            <ns:StatusBit>100</ns:StatusBit>
+                            <!--Optional:-->
+                            <ns:Unit>faciat maria</ns:Unit>
+                        </ns:TimeLineAttributes>
+                        <ns:TimeLineData>
+                            <ns:TimeLineValue>et quisquam</ns:TimeLineValue>
+                            <!--Optional:-->
+                            <ns:TimeLineTimeStamp>et soror</ns:TimeLineTimeStamp>
+                            <!--Optional:-->
+                            <ns:TimeLineState>annos bella gero</ns:TimeLineState>
+                        </ns:TimeLineData>
+                    </ns:TimeLine>
+                </ns:TimeLines>
+            </ns:Response>
+        </ns:ProvideTimeSeriesDataResponse>
+    </soap:Body>
+</soap:Envelope>
