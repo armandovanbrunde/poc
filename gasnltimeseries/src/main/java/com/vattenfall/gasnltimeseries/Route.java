@@ -16,7 +16,7 @@ public class Route extends RouteBuilder {
                 .setHeader("GasNLUsername").method("dynamicConfig","getUsername")
                 .setHeader("GasNLPassword").method("dynamicConfig","getPassword")
                 .log("username : ${header.GasNLUsername} , password : ${header.GasNLPassword}")
-                .recipientList(simple("cxf:bean:nlTimeSeries?dataFormat=PAYLOAD&username=${header.GasNLUsername}&password=${header.GasNLPassword}"))
+                .toD("cxf:bean:nlTimeSeries?dataFormat=PAYLOAD&username=${header.GasNLUsername}&password=${header.GasNLPassword}")
         ;
     }
 }

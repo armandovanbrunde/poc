@@ -3,3 +3,11 @@ mock/target/
 \.idea/
 
 gasnltimeseries/target/
+
+mock/src/test/script/\._mock_response\.xml
+
+mockclient/target/
+
+mock/src/test/script/\._response_transform\.xsl
+
+mockclient/mockclient\.iml

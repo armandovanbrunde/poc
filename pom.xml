@@ -11,6 +11,7 @@
     <modules>
         <module>mock</module>
         <module>gasnltimeseries</module>
+        <module>mockclient</module>
     </modules>
     <properties>
         <java.version>11</java.version>
