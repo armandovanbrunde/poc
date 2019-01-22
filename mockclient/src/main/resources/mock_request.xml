@@ -1,0 +1,91 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://schemas.gengroup.com/ProvideTimeSeriesData/1.0">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <ns:ProvideTimeSeriesDataRequest xmlns:ns="http://schemas.gengroup.com/ProvideTimeSeriesData/1.0">
+            <ns:Header>
+                <ns:MessageID>gero et</ns:MessageID>
+                <ns:DateTime>2013-11-23T15:44:07</ns:DateTime>
+                <!--Optional:-->
+                <ns:CorrelationID>ventos tempestatesque</ns:CorrelationID>
+                <!--Optional:-->
+                <ns:Retry>false</ns:Retry>
+                <!--Optional:-->
+                <ns:SourceID>per auras</ns:SourceID>
+                <!--Optional:-->
+                <ns:TransactionID>circum claustra</ns:TransactionID>
+                <!--Optional:-->
+                <ns:Sender>nimborum in</ns:Sender>
+                <!--Optional:-->
+                <ns:Receiver>foedere certo</ns:Receiver>
+            </ns:Header>
+            <ns:Request>
+                <ns:TimeLines>
+                    <!--1 or more repetitions:-->
+                    <ns:TimeLine>
+                        <ns:Meter>
+                            <ns:MeterID>
+                                <!--Optional:-->
+                                <ns:Code>profundum quippe ferant</ns:Code>
+                                <!--Optional:-->
+                                <ns:EanCode>et carcere</ns:EanCode>
+                            </ns:MeterID>
+                            <ns:MeterProperties>
+                                <!--Optional:-->
+                                <ns:Name>iovis rapidum iaculata</ns:Name>
+                                <!--Optional:-->
+                                <ns:Product>speluncis abdidit</ns:Product>
+                                <!--Optional:-->
+                                <ns:Unit>bella gero et</ns:Unit>
+                                <!--Optional:-->
+                                <ns:Versions>100</ns:Versions>
+                                <!--Optional:-->
+                                <ns:Decimals>100</ns:Decimals>
+                                <!--Optional:-->
+                                <ns:Scheme>flammas turbine</ns:Scheme>
+                                <!--Optional:-->
+                                <ns:Administration>hoc metuens</ns:Administration>
+                                <!--Optional:-->
+                                <ns:Segment>ac vinclis</ns:Segment>
+                                <!--Optional:-->
+                                <ns:SubSegment>speluncis abdidit</ns:SubSegment>
+                                <!--Optional:-->
+                                <ns:MinInterval>200</ns:MinInterval>
+                                <!--Optional:-->
+                                <ns:Code1>aris imponet honorem</ns:Code1>
+                                <!--Optional:-->
+                                <ns:Code2>praeterea aut</ns:Code2>
+                                <!--Optional:-->
+                                <ns:Code3>claustra fremunt</ns:Code3>
+                                <!--Optional:-->
+                                <ns:Code4>imperio premit</ns:Code4>
+                                <!--Optional:-->
+                                <ns:Code5>quisquam numen</ns:Code5>
+                                <!--Optional:-->
+                                <ns:Code6>ac vinclis</ns:Code6>
+                                <!--Optional:-->
+                                <ns:MeterType>100</ns:MeterType>
+                            </ns:MeterProperties>
+                        </ns:Meter>
+                        <ns:TimeLineAttributes>
+                            <ns:PeriodStart>2008-08-06T16:17:00+02:00</ns:PeriodStart>
+                            <ns:PeriodEnd>2011-12-25T03:49:17</ns:PeriodEnd>
+                            <ns:DSTMethod>100</ns:DSTMethod>
+                            <!--Optional:-->
+                            <ns:Interval>annos bella gero</ns:Interval>
+                            <!--Optional:-->
+                            <ns:DateTimeMethod>100</ns:DateTimeMethod>
+                            <!--Optional:-->
+                            <ns:Version>100</ns:Version>
+                            <!--Optional:-->
+                            <ns:Type>100</ns:Type>
+                            <!--Optional:-->
+                            <ns:StatusBit>100</ns:StatusBit>
+                            <!--Optional:-->
+                            <ns:Unit>certo et</ns:Unit>
+                        </ns:TimeLineAttributes>
+                    </ns:TimeLine>
+                </ns:TimeLines>
+            </ns:Request>
+        </ns:ProvideTimeSeriesDataRequest>
+    </soapenv:Body>
+</soapenv:Envelope>
